@@ -23,14 +23,30 @@
  
   > \* Technically it's called an Access Point (AP), it has router function built into it, but for now we will refer it as router to avoid confusion.
 
-For clients to obtain ip address from a DHCP server or router, client and the server will exchange DHCP messages on client port 68 and server port 67. They will exchange 4 messages during this process, namely DISCOVER, OFFER, REQUEST, ACKNOWLEDGE. DISCOVER and REQUEST are sent by the client, OFFER and ACKNOWLEDGE are sent by the server.
+For clients to obtain ip address from a DHCP server or router, client and the server will exchange DHCP messages on client port 68 and server port 67. They will exchange 4 messages during this process, namely DISCOVER, OFFER, REQUEST and ACKNOWLEDGE. DISCOVER and REQUEST are sent by the client, OFFER and ACKNOWLEDGE are sent by the server.
+<br />
+<br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121533644-0e7abe00-ca33-11eb-83d4-dcac81302a0f.png)
+<br />
+<br />
+The above image shows the DHCP DORA process, as shown it has DISCOVER, OFFER, REQUEST and ACKNOWLEDGE. We will discuss all the messages to understand DHCP DORA process better. (Click this [link](./DHCP_Messages.pcapng) to download the .pcapng file)
 <br />
 <br />
 <br />
 ![image](https://user-images.githubusercontent.com/73285881/121489723-f0976400-ca06-11eb-8355-d35e2f1d6fd7.png)
+<br />
+<br />
+<br />
+
 ![image](https://user-images.githubusercontent.com/73285881/121490720-df028c00-ca07-11eb-992c-cd27966a93a7.png)
 ![image](https://user-images.githubusercontent.com/73285881/121490354-80d5a900-ca07-11eb-882a-5fd0740c6cf0.png)
 ![image](https://user-images.githubusercontent.com/73285881/121490823-f8a3d380-ca07-11eb-8336-2cd77232be15.png)
+
+
+
+
+Clicking [this link](./DHCP_Messages.pcapng)
 
 
 
