@@ -8,8 +8,12 @@
   5. [Conclusion](#conclusion)
  
  ## Why we need DHCP? <a name="intro"></a>
- Dynamic Host Configuration Protocol aka DHCP is probably one of the most commonly used services in the TCP/IP network. At its core, DHCP is a protocol that assigned ip addresses automatically to the clients. Before diving any deeper into DHCP, I always like to ask myself why, why is DHCP needed in the first place, what would happen if we do not have DHCP. Well, let's say you are a network administrator at Company A, your boss Derek wanted you to assign ip addresses of 5 client computers for the new employees, so you did what he said and statically assigned the ip addresses and subnet masks of each computer respectively. Next year, Company A grows bigger and Derek has the capital to hire more employees, so he did. He hired 100 employees, and you as the network administrator is asked again to now configure the ip addresses of the 100 client computers. See the problem now? This is why DHCP protocol is needed, it helps to automate task so that we humans can focus on other important tasks at hand and let the protocol perform the repetitive tasks.  
- 
+ Dynamic Host Configuration Protocol aka DHCP is probably one of the most commonly used services in the TCP/IP network. At its core, DHCP is a protocol that assigned ip addresses automatically to the clients. Before diving any deeper into DHCP, I always like to ask myself why, why is DHCP needed in the first place, what would happen if we do not have DHCP. Well, let's say you are a network administrator at Company A, your boss Derek wanted you to assign ip addresses of 5 client computers for the new employees, so you did what he said and statically assigned the ip addresses and subnet masks of each computer respectively. Next year, Company A grows bigger and Derek has the capital to hire more employees, so he did. He hired 100 employees, and you as the network administrator is asked again to now configure the ip addresses of the 100 client computers. See the problem now? This is why DHCP protocol is needed, it helps to automate task so that we humans can focus on other important tasks at hand and let the protocol perform the repetitive tasks. The following are a few DHCP charateristics:
+ - Auto configuration of host IP settings: Main function of DHCP, result in less human error.
+ - Host IP configuration is controlled by IT staff
+ - Assigns a temporary lease of ip addresses: The act of assigning ip addresses to host is called leasing. With DHCP leasing, the DHCP server can reclaim IP addresses when a device is removed from the network, making better use of the available addresses.
+ - Enables mobility
+ - Allow permenant assignment of ip addresses: This is usually performed on the routers, servers and other critical infrastructures.  
  ## D.O.R.A Concept <a name="dora"></a>
  ## Configuration <a name="config"></a>
  ## ip helper-address <a name="iphelp"></a>
