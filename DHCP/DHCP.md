@@ -38,7 +38,18 @@ The above image shows the DHCP DORA process, as shown it has DISCOVER, OFFER, RE
 <br />
 <br />
 <br />
-First, let's take a look at the DISCOVER message which is the first step in the DORA process. To request for an ip address on its interface, PC1 sends a broadcast DISCOVER message into the network. Well, why send a broadcast message? This is because we do not know where the DHCP server is located, so the only way to find out where the DHCP server is, is by sending DISCOVER messages to every single device on that network. Let's take a closer look at wireshark capture of the DISCOVER message. In the ethernet header, the destination MAC is set to ffff.ffff.ffff (all f's is L2 broadcast) and the source MAC is the PC1. In the network layer, we have the destination ip set to 255.255.255.255 which is known as a local broadcast address, meaning that it only forwards the packet to every devices that reside in that subnet, router will drop this packet by default. The source ip address is then set to 0.0.0.0 since we do not have an ip address. In the transport layer, UDP is used with client port being 68 and the server port being 67 as mentioned previously. The packet is then encapsulated with DHCP DISCOVER, with almost all the information set to 0.0.0.0 since we do not have these information yet. This packet is then send to all the devices in the network.
+First, let's take a look at the DISCOVER message which is the first step in the DORA process. To request for an ip address on its interface, PC1 sends a broadcast DISCOVER message into the network. Well, why send a broadcast message? This is because we do not know where the DHCP server is located, so the only way to find out where the DHCP server is, is by sending DISCOVER messages to every single device on that network. Let's take a closer look at wireshark capture of the DISCOVER message. In the ethernet header, the destination MAC is set to ffff.ffff.ffff (all f's is L2 broadcast) and the source MAC is the PC1. In the network layer, we have the destination ip set to 255.255.255.255 which is known as a local broadcast address, meaning that it only forwards the packet to every devices that reside in that subnet, router will drop this packet by default. The source ip address is then set to 0.0.0.0 since we do not have an ip address. In the transport layer, UDP is used with client port being 68 and the server port being 67 as mentioned previously. The packet is then encapsulated with DHCP DISCOVER, with almost all the information set to 0.0.0.0 since we do not have these information yet. This packet is then send to all the devices in the network. In this case, it only sends to R1.
+<br />
+<br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121624860-e9269800-caa4-11eb-941f-0e8f8b255b67.png)
+<br />
+<br />
+<br />
+Wait, before the server reply with a DHCP OFFER, what is frame 19 in the wireshark packet capture? Before replying an OFFER message to the PC1, R1 needs to make sure that there is no duplicate ip address that it about to assign. Therefore, R1 sends an ARP probe request, which is a broadcast message into the network, if it does not receive a reply, meaning that there is no duplicate ip address and it will proceed with the OFFER message. In this case, the sender ip address is R1, is asking if anyone has the ip address of 192.168.0.11, no one reply so the R1 proceed to send the OFFER message.
+<br />
+<br />
+<br />
 ![image](https://user-images.githubusercontent.com/73285881/121490720-df028c00-ca07-11eb-992c-cd27966a93a7.png)
 ![image](https://user-images.githubusercontent.com/73285881/121490354-80d5a900-ca07-11eb-882a-5fd0740c6cf0.png)
 ![image](https://user-images.githubusercontent.com/73285881/121490823-f8a3d380-ca07-11eb-8336-2cd77232be15.png)
