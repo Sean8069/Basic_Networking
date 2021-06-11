@@ -82,13 +82,16 @@ One last thing after the DORA process, notice in frame 23, there is a gratuitous
 <br />
 <br />
 <br />
-
-
-
-
- 
  
  
  ## Configuration <a name="config"></a>
+ Now that we are done with the boring concept theory, let's get our hands dirty and start configuring!
+<br />
+<br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121643231-29e1d980-cac4-11eb-9936-b57f1984f49e.png)
+<br />
+<br />
+<br />
  ## ip helper-address <a name="iphelp"></a>
  ## Conclusion <a name="conclusion"></a>
