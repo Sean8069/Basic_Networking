@@ -62,12 +62,14 @@ R1 sends the OFFER message with broadcast message on L2 and L3. Well, you might 
 <br />
 <br />
 <br />
-
+Upon receiving the OFFER message, PC1 will send a REQUEST message, requesting for that ip address that was offer by R1, which is 192.168.0.11. Note that the source ip address is still 0.0.0.0, because the R1 hasn’t acknowledge the requested ip address from PC1. The DHCP server address is now determined by the option (54) to prevent any other DHCP server in the network from acknowledging it.
 <br />
 <br />
 <br />
-![image](https://user-images.githubusercontent.com/73285881/121490823-f8a3d380-ca07-11eb-8336-2cd77232be15.png)
-
+![image](https://user-images.githubusercontent.com/73285881/121629608-217ea400-caae-11eb-914a-08b1fa7e402b.png)
+<br />
+<br />
+<br />
 
 
 
