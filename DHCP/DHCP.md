@@ -138,4 +138,25 @@ The 'show ip dhcp pool' command shows the the number of ip addresses that are le
 
 
  ## ip helper-address <a name="iphelp"></a>
+ We are done with DHCP right? Well, not quite. Let's take a look at another topology for now.
+<br />
+<br />
+ ![image](https://user-images.githubusercontent.com/73285881/121661357-b39aa280-cad6-11eb-87ec-b5c3664c19f4.png)
+<br />
+<br />
+What if our DHCP server is located at another subnet/network? You might be thinking it works just fine, the DISCOVER message will forward the message to the DHCP server at 172.16.0.0 subnet. No, remember the DORA process we discussed? DISCOVERY message set its destination ip address to 255.255.255.255, which is called a local broadcast address. DHCP server will then look at this address and send an OFFER message back. However, as mentioned previously, all routers by default drops the local broadcast address, it will not forward the packet to 172.16.0.0 network, where the DHCP server resides. So, we need another command to do so. This is where the ip helper-address comes into play, it tells the router to forward the local broadcast address to the DHCP server. We will enter this command at R1 192.168.0.0 facing interface, which is int g0/0.
+<br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121662824-5bfd3680-cad8-11eb-90a4-f1e0dff9bbf8.png)
+<br />
+<br />
+Once this command is entered, the local broadcast address will now be forwared to the DHCP server.
+<br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121663231-c910cc00-cad8-11eb-947d-60848ddab66b.png)
+<br />
+<br />
+As shown, PC1 has successfully obtained an ip address from the DHCP server at 172.16.0.0/24 network. Notice that the DHCP server is reside at a another network, different from the previous example where the DHCP server resides at the local subnet same as the PCs.
+
+
  ## Conclusion <a name="conclusion"></a>
