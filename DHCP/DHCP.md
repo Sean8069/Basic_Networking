@@ -50,7 +50,14 @@ Wait, before the server reply with a DHCP OFFER, what is frame 19 in the wiresha
 <br />
 <br />
 <br />
-![image](https://user-images.githubusercontent.com/73285881/121490720-df028c00-ca07-11eb-992c-cd27966a93a7.png)
+![image](https://user-images.githubusercontent.com/73285881/121626597-4ff98080-caa8-11eb-9814-463053206d6a.png)
+<br />
+<br />
+<br />
+
+<br />
+<br />
+<br />
 ![image](https://user-images.githubusercontent.com/73285881/121490354-80d5a900-ca07-11eb-882a-5fd0740c6cf0.png)
 ![image](https://user-images.githubusercontent.com/73285881/121490823-f8a3d380-ca07-11eb-8336-2cd77232be15.png)
 
