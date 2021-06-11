@@ -6,6 +6,7 @@
   3. [Configuration](#config)
   4. [ip helper-address](#iphelp)
   5. [Conclusion](#conclusion)
+  6. [Reference](#reference)
  
  ## Why we need DHCP? <a name="intro"></a>
  
@@ -160,3 +161,10 @@ As shown, PC1 has successfully obtained an ip address from the DHCP server at 17
 
 
  ## Conclusion <a name="conclusion"></a>
+This conludes the basic of DHCP. DHCP is one of the most basic yet important concept to understand, it really helps you to visualize and map a network topology better. Also, this is one of my favourite protocol to discuss. Thank you for reading till this far, hope to see you again next time.
+
+## References <a name="reference"></a>
+- <a href="https://www.amazon.com/CCNA-200-301-Official-Guide-Library/dp/1587147149?ref_=Oct_s9_apbd_obs_hd_bw_bPfhUB&pf_rd_r=HSB9PE8V06FJ1MV8QH97&pf_rd_p=d847c1a7-83f0-55db-8de8-f9a8e8fc20a1&pf_rd_s=merchandised-search-8&pf_rd_t=BROWSE&pf_rd_i=379347011">CCNA 200-301 Official Cert Guide Library 1st Edition</a>
+- <a href="https://study-ccna.com/configure-cisco-router-as-dhcp-server/">Configuring DHCP</a>
+- <a href="https://www.practicalnetworking.net/series/arp/gratuitous-arp/">Gratuitous ARP</a>
+
