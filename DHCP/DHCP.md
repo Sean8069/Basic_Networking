@@ -54,7 +54,7 @@ Wait, before the server reply with a DHCP OFFER, what is frame 19 in the wiresha
 <br />
 <br />
 <br />
-
+R1 sends the OFFER message with broadcast message on L2 and L3. Well, you might be wondering, how does PC1 knows that the message is for itself and not other machine? This is a great question, look at option (61) Client identifier in the DISCOVER message, it contains the MAC address of the PC1, and look at the ‘Client MAC address’ in the OFFER message, it is the MAC address of PC1! The DISCOVER message sends an option (61) that contains PC1 MAC address R1 and R1 look at option 61 and understand that it needs to send this OFFER packet this is particular MAC address which is how PC1 knows that the OFFER message is for itself. Now, look closer in the options that the OFFER message has. We can see that, it contains DHCP server identifier, IP Address Lease Time, Subnet Mask, Router and Domain Name Server. These options are sent by R1 because PC1 requests for these parameters in the option (55) Parameter Request List. Note that some of these options are optional.
 <br />
 <br />
 <br />
