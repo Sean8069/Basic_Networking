@@ -93,5 +93,30 @@ One last thing after the DORA process, notice in frame 23, there is a gratuitous
 <br />
 <br />
 <br />
+>Note that Cisco IOS images are used in creating this simulation
+
+This is a simple topology created for this purpose. R1 is a router that will act as the DHCP Server, S1 is a switch, PC1-4 indicate that is a user computer. First, we will start by configuring the router to be a DHCP server. Open up the CLI of the router, we start at the global config mode. We first need to configure the interface connected to the switch to allow DISCOVER messages to be recevied on that interface. In the global config mode, entered as such:
+<br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121644895-2bac9c80-cac6-11eb-9a2c-f7a6e7735b85.png)
+<br />
+<br />
+Now that we have configure the interface, we will configure the DHCP pool. By configuring the DHCP pool, we allow a set of ip addresses to be leased by the DHCP server. Back in the global config mode, do as such:
+<br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121645182-7a5a3680-cac6-11eb-98c5-20405534437c.png)
+<br />
+<br />
+Why we need exclude ip addresses first? This is becasue we want to make sure certain devices will have that ip addresses permenantly, this is usually assigned on DHCP server, routers and etc. We then create a DHCP pool named POOL_ONE. Upon creating a DHCP pool, we will enter (dhcp-config)#. In (dhcp-config)#, we need to set a list of ip address and subnet mask for the server to assign ip address, thus the network command follow by the network-id and subnet mask. After that, we need to provide a default router ip address and a dns-server address (optional). With this, we are done with the DHCP configuration. Now we just have to check that our running config is correct.
+<br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121646632-1a648f80-cac8-11eb-9fc8-29d0e3406140.png)
+<br />
+<br />
+Everything looks good, now we will move on with requesting ip address from the PCs.
+![image](https://user-images.githubusercontent.com/73285881/121647936-885d8680-cac9-11eb-83f3-ca0a580d6243.png)<br />
+<br />
+
+
  ## ip helper-address <a name="iphelp"></a>
  ## Conclusion <a name="conclusion"></a>
