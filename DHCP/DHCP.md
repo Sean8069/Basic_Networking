@@ -93,8 +93,6 @@ One last thing after the DORA process, notice in frame 23, there is a gratuitous
 <br />
 <br />
 <br />
->Note that Cisco IOS images are used in creating this simulation
-
 This is a simple topology created for this purpose. R1 is a router that will act as the DHCP Server, S1 is a switch, PC1-4 indicate that is a user computer. First, we will start by configuring the router to be a DHCP server. Open up the CLI of the router, we start at the global config mode. We first need to configure the interface connected to the switch to allow DISCOVER messages to be recevied on that interface. In the global config mode, entered as such:
 <br />
 <br />
@@ -114,8 +112,27 @@ Why we need exclude ip addresses first? This is becasue we want to make sure cer
 <br />
 <br />
 Everything looks good, now we will move on with requesting ip address from the PCs.
-![image](https://user-images.githubusercontent.com/73285881/121647936-885d8680-cac9-11eb-83f3-ca0a580d6243.png)<br />
 <br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121647936-885d8680-cac9-11eb-83f3-ca0a580d6243.png)
+<br />
+<br />
+Nice, PC1-4 successfully assigned a ip address by the DHCP server. Let's take a look at the show DHCP command in the router.
+<br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121648517-2c473200-caca-11eb-8845-aabcdc7413fa.png)
+<br />
+<br />
+The 'show ip dhcp binding' shows all the ip addresses that are leased by the DHCP server, it also contains the lease time expiration date indicating when will the ip addresses expire and renew again.
+<br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121649519-3a498280-cacb-11eb-9ecc-0088502eb0af.png)
+<br />
+<br />
+The 'show ip dhcp pool' command shows the the number of ip addresses that are leased by the DHCP server, also indicating which ip address is to be used upon the next request. Thus, we have successfully configure our DHCP server.
+<br />
+<br />
+>Do note that I'm using GNS3 to run these simulation, however, you can also achieved this by using Cisco Packet Tracer.
 
 
  ## ip helper-address <a name="iphelp"></a>
