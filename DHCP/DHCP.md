@@ -21,7 +21,7 @@
  
  We now understand that DHCP leases ip addresses automatically, but how? We first need to understand a key concept first. DHCP is a service in the TCP/IP network, a service is provided by the server, and a client uses the service provided by the server. So, we can conclude we need a server in order to lease ip addresses to clients. Actually router can lease ip addresses to the clients as well, which is why we can have internet connectively in our home router* without having to manually input the ip address. 
  
-  > \* Technically it's called an Access Point (AP), it has router function built into it, but for now we will refer it as router to avoid confusion.
+  > \* Technically a home router is called an Access Point (AP), it has router function built into it, but for now we will refer it as router to avoid confusion.
 
 For clients to obtain ip address from a DHCP server or router, client and the server will exchange DHCP messages on UDP client port 68 and UDP server port 67. They will exchange 4 messages during this process, namely DISCOVER, OFFER, REQUEST and ACKNOWLEDGE. DISCOVER and REQUEST are sent by the client, OFFER and ACKNOWLEDGE are sent by the server.
 <br />
