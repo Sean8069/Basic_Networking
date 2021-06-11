@@ -34,10 +34,11 @@ The above image shows the DHCP DORA process, as shown it has DISCOVER, OFFER, RE
 <br />
 <br />
 <br />
-![image](https://user-images.githubusercontent.com/73285881/121489723-f0976400-ca06-11eb-8355-d35e2f1d6fd7.png)
+![image](https://user-images.githubusercontent.com/73285881/121621755-60592d80-ca9f-11eb-8604-13ffdd00abc8.png)
 <br />
 <br />
 <br />
+First, let's take a look at the DISCOVER message which is the first step in the DORA process. To request for an ip address on its interface, PC1 sends a broadcast DISCOVER message into the network. Well, why send a broadcast message? This is because we do not know where the DHCP server is located, so the only way to find out where the DHCP server is, is by sending DISCOVER messages to every single device on that network. Let's take a closer look at wireshark capture of the DISCOVER message. In the ethernet header, the destination MAC is set to ffff.ffff.ffff (all f's is L2 broadcast) and the source MAC is the PC1. In the network layer, we have the destination ip set to 255.255.255.255 which is known as a local broadcast address, meaning that it only forwards the packet to every devices that reside in that subnet, router will drop this packet by default. The source ip address is then set to 0.0.0.0 since we do not have an ip address.
 
 ![image](https://user-images.githubusercontent.com/73285881/121490720-df028c00-ca07-11eb-992c-cd27966a93a7.png)
 ![image](https://user-images.githubusercontent.com/73285881/121490354-80d5a900-ca07-11eb-882a-5fd0740c6cf0.png)
