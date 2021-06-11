@@ -70,10 +70,19 @@ Upon receiving the OFFER message, PC1 will send a REQUEST message, requesting fo
 <br />
 <br />
 <br />
+When R1 receives the REQUEST message, it will reply back to PC1 with an ACKNOWLEDGE message by giving PC1 the permission to use the requested ip address and other parameter. This concludes the whole DORA process.
+<br />
+<br />
+<br />
+![image](https://user-images.githubusercontent.com/73285881/121630398-a61df200-caaf-11eb-8fdb-40c8e77925fa.png)
+<br />
+<br />
+<br />
+One last thing after the DORA process, notice in frame 23, there is a gratuitous ARP reply send, what it that? Gratuitous ARP in this instance is used to announce a node existence, this happens when a host newly joins a network. This is an attempt to pre-emptively populate ARP caches of neighbouring hosts without requiring them to initiate the Traditional ARP process. Note that the Opcode is 2, signify that it is a reply, despite the fact the there is no request. This can be interpreted as Gratuitous ARP is a broadcast reply that was not prompted by an ARP Request.
+<br />
+<br />
+<br />
 
-
-
-Clicking [this link](./DHCP_Messages.pcapng)
 
 
 
