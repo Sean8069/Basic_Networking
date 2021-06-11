@@ -132,6 +132,8 @@ The 'show ip dhcp binding' shows all the ip addresses that are leased by the DHC
 The 'show ip dhcp pool' command shows the the number of ip addresses that are leased by the DHCP server, also indicating which ip address is to be used upon the next request. Thus, we have successfully configure our DHCP server.
 <br />
 <br />
+>Remeber to use the 'write' command or 'copy running-config startup-config' command to save the configuration.
+
 >Do note that I'm using GNS3 to run these simulation, however, you can also achieved this by using Cisco Packet Tracer.
 
 
