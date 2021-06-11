@@ -23,7 +23,7 @@
  
   > \* Technically it's called an Access Point (AP), it has router function built into it, but for now we will refer it as router to avoid confusion.
 
-For clients to obtain ip address from a DHCP server or router, client and the server will exchange DHCP messages on client port 68 and server port 67. They will exchange 4 messages during this process, namely DISCOVER, OFFER, REQUEST and ACKNOWLEDGE. DISCOVER and REQUEST are sent by the client, OFFER and ACKNOWLEDGE are sent by the server.
+For clients to obtain ip address from a DHCP server or router, client and the server will exchange DHCP messages on UDP client port 68 and UDP server port 67. They will exchange 4 messages during this process, namely DISCOVER, OFFER, REQUEST and ACKNOWLEDGE. DISCOVER and REQUEST are sent by the client, OFFER and ACKNOWLEDGE are sent by the server.
 <br />
 <br />
 <br />
@@ -38,8 +38,7 @@ The above image shows the DHCP DORA process, as shown it has DISCOVER, OFFER, RE
 <br />
 <br />
 <br />
-First, let's take a look at the DISCOVER message which is the first step in the DORA process. To request for an ip address on its interface, PC1 sends a broadcast DISCOVER message into the network. Well, why send a broadcast message? This is because we do not know where the DHCP server is located, so the only way to find out where the DHCP server is, is by sending DISCOVER messages to every single device on that network. Let's take a closer look at wireshark capture of the DISCOVER message. In the ethernet header, the destination MAC is set to ffff.ffff.ffff (all f's is L2 broadcast) and the source MAC is the PC1. In the network layer, we have the destination ip set to 255.255.255.255 which is known as a local broadcast address, meaning that it only forwards the packet to every devices that reside in that subnet, router will drop this packet by default. The source ip address is then set to 0.0.0.0 since we do not have an ip address.
-
+First, let's take a look at the DISCOVER message which is the first step in the DORA process. To request for an ip address on its interface, PC1 sends a broadcast DISCOVER message into the network. Well, why send a broadcast message? This is because we do not know where the DHCP server is located, so the only way to find out where the DHCP server is, is by sending DISCOVER messages to every single device on that network. Let's take a closer look at wireshark capture of the DISCOVER message. In the ethernet header, the destination MAC is set to ffff.ffff.ffff (all f's is L2 broadcast) and the source MAC is the PC1. In the network layer, we have the destination ip set to 255.255.255.255 which is known as a local broadcast address, meaning that it only forwards the packet to every devices that reside in that subnet, router will drop this packet by default. The source ip address is then set to 0.0.0.0 since we do not have an ip address. In the transport layer, UDP is used with client port being 68 and the server port being 67 as mentioned previously. The packet is then encapsulated with DHCP DISCOVER, with almost all the information set to 0.0.0.0 since we do not have these information yet. This packet is then send to all the devices in the network.
 ![image](https://user-images.githubusercontent.com/73285881/121490720-df028c00-ca07-11eb-992c-cd27966a93a7.png)
 ![image](https://user-images.githubusercontent.com/73285881/121490354-80d5a900-ca07-11eb-882a-5fd0740c6cf0.png)
 ![image](https://user-images.githubusercontent.com/73285881/121490823-f8a3d380-ca07-11eb-8336-2cd77232be15.png)
