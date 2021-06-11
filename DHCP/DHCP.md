@@ -58,7 +58,14 @@ R1 sends the OFFER message with broadcast message on L2 and L3. Well, you might 
 <br />
 <br />
 <br />
-![image](https://user-images.githubusercontent.com/73285881/121490354-80d5a900-ca07-11eb-882a-5fd0740c6cf0.png)
+![image](https://user-images.githubusercontent.com/73285881/121628458-d8c5eb80-caab-11eb-90d3-146377adadea.png)
+<br />
+<br />
+<br />
+
+<br />
+<br />
+<br />
 ![image](https://user-images.githubusercontent.com/73285881/121490823-f8a3d380-ca07-11eb-8336-2cd77232be15.png)
 
 
